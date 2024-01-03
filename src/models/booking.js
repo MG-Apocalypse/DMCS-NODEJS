@@ -1,7 +1,6 @@
 'use strict';
-const {
-    Model, UUID
-} = require('sequelize');
+const { Model, UUID } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
     class Booking extends Model {
         /**
@@ -13,15 +12,20 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     }
-    Booking.init({
-        statusID: DataTypes.STRING,
-        doctorID: DataTypes.INTEGER,
-        patientID: DataTypes.INTEGER,
-        date: DataTypes.DATE,
-        timeType: DataTypes.STRING,
-    }, {
-        sequelize,
-        modelName: 'Booking',
-    });
+
+    Booking.init(
+        {
+            statusID: DataTypes.STRING,
+            employerId: DataTypes.INTEGER, // Replace 'roomId' with 'employerId'
+            studentId: DataTypes.INTEGER,
+            date: DataTypes.DATE,
+            timeType: DataTypes.STRING,
+        },
+        {
+            sequelize,
+            modelName: 'Booking',
+        }
+    );
+
     return Booking;
 };

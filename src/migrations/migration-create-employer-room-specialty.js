@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.createTable('doctor_clinic_specialty', {
+        await queryInterface.createTable('employer_room_specialty', {
 
             id: {
                 allowNull: false,
@@ -10,10 +10,10 @@ module.exports = {
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            doctorId: {
-                type: Sequelize.INTEGER
+            employerId: {
+                type: Sequelize.INTEGER // Replace 'roomId' with 'employerId'
             },
-            clinicId: {
+            roomId: {
                 type: Sequelize.INTEGER
             },
             specialtyId: {
@@ -30,6 +30,6 @@ module.exports = {
         });
     },
     async down(queryInterface, Sequelize) {
-        await queryInterface.dropTable('doctor_clinic_specialty');
+        await queryInterface.dropTable('employer_room_specialty'); // Replace 'room_room_specialty' with 'employer_room_specialty'
     }
 };

@@ -4,7 +4,7 @@ module.exports = {
     async up(queryInterface, Sequelize) {
         await queryInterface.createTable('bookings', {
             // statusID: DataTypes.STRING,
-            // doctorID: DataTypes.INTEGER,
+            // employerId: DataTypes.INTEGER,
             // patientID: DataTypes.INTEGER,
             // date: DataTypes.DATE,
             // timeType: DataTypes.STRING,
@@ -17,10 +17,10 @@ module.exports = {
             statusID: {
                 type: Sequelize.STRING
             },
-            doctorID: {
+            employerId: {
                 type: Sequelize.INTEGER
             },
-            patientID: {
+            studentId: {
                 type: Sequelize.INTEGER
             },
             date: {

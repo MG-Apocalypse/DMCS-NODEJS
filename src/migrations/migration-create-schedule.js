@@ -7,7 +7,7 @@ module.exports = {
             // maxNumber: DataTypes.INTEGER,
             // data: DataTypes.DATA,
             // timeType: DataTypes.STRING,
-            // doctocId: DataTypes.INTEGER,
+            // doctorId: DataTypes.INTEGER,
             id: {
                 allowNull: false,
                 autoIncrement: true,
@@ -21,12 +21,12 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             date: {
-                type: Sequelize.DATE
+                type: Sequelize.STRING
             },
             timeType: {
                 type: Sequelize.STRING
             },
-            doctocId: {
+            employerId: {
                 type: Sequelize.INTEGER
             },
             createdAt: {
