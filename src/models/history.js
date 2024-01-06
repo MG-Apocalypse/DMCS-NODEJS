@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     History.init(
         {
             studentId: DataTypes.INTEGER,
-            employerId: DataTypes.INTEGER, // Replace 'roomId' with 'employerId'
+            roomId: DataTypes.INTEGER, // Replace 'roomId' with 'roomId'
             description: DataTypes.TEXT,
             files: DataTypes.TEXT,
         },

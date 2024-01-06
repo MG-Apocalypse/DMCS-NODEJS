@@ -28,7 +28,7 @@ module.exports = {
                 type: Sequelize.TEXT('long')
             },
 
-            employerId: {
+            roomId: {
                 allowNull: true,
                 type: Sequelize.INTEGER
             },
@@ -38,7 +38,7 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
 
-            roomId: {
+            clinicId: {
                 allowNull: true,
                 type: Sequelize.INTEGER
             },

@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            Markdown.belongsTo(models.User, { foreignKey: 'employerId' }); // Replace 'roomId' with 'employerId'
+            Markdown.belongsTo(models.User, { foreignKey: 'roomId' }); // Replace 'roomId' with 'roomId'
         }
     }
 
@@ -19,9 +19,9 @@ module.exports = (sequelize, DataTypes) => {
             contentHTML: DataTypes.TEXT('long'),
             contentMarkdown: DataTypes.TEXT('long'),
             description: DataTypes.TEXT('long'),
-            employerId: DataTypes.INTEGER, // Replace 'roomId' with 'employerId'
+            roomId: DataTypes.INTEGER, // Replace 'roomId' with 'roomId'
             specialtyId: DataTypes.INTEGER,
-            roomId: DataTypes.INTEGER,
+            clinicId: DataTypes.INTEGER,
         },
         {
             sequelize,

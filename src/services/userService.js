@@ -229,11 +229,31 @@ let getAllCodeService = (typeInput) => {
     })
 }
 
+let getAllDorms = (dormId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let dorms = '';
+            if (dormId === 'ALL') {
+                dorms = await db.Dorm_list.findAll({
+                    attributes: {
+                        // Add your attributes if needed
+                    }
+                });
+            }
+            resolve(dorms);
+        } catch (e) {
+            reject(e);
+        }
+    });
+}
+
+
 module.exports = {
     handleUserLogin: handleUserLogin,
     getAllUsers: getAllUsers,
     createNewUser: createNewUser,
     updateUserData: updateUserData,
     deleteUser: deleteUser,
-    getAllCodeService: getAllCodeService
+    getAllCodeService: getAllCodeService,
+    getAllDorms: getAllDorms
 }

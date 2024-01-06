@@ -13,7 +13,7 @@ module.exports = {
             studentId: {
                 type: Sequelize.INTEGER
             },
-            employerId: {
+            roomId: {
                 type: Sequelize.INTEGER
             },
             description: {

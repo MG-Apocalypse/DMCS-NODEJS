@@ -26,7 +26,7 @@ module.exports = {
             timeType: {
                 type: Sequelize.STRING
             },
-            employerId: {
+            roomId: {
                 type: Sequelize.INTEGER
             },
             createdAt: {

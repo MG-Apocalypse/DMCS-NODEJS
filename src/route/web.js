@@ -1,7 +1,11 @@
 import express from "express";
 import homeController from "../controllers/homeController";
 import userController from "../controllers/userController";
-import employerController from "../controllers/employerController"; // Assuming you have an employerController
+import roomController from "../controllers/roomController";
+import studentController from "../controllers/studentController";
+import specialtyController from "../controllers/specialtyController";
+
+
 let router = express.Router();
 
 let initWebRoutes = (app) => {
@@ -21,12 +25,25 @@ let initWebRoutes = (app) => {
     router.delete('/api/delete-user', userController.handleDeleteUser);
     router.get('/api/allcode', userController.getAllCode);
 
-    router.get('/api/employer-student', employerController.getEmployerStudent);
-    router.get('/api/get-all-employers', employerController.getAllEmployers);
-    router.post('/api/save-infor-employers', employerController.postInforEmployer);
-    router.get('/api/get-detail-employer-by-id', employerController.getDetailEmployerById);
-    router.post('/api/bulk-create-schedule', employerController.bulkCreateSchedule)
-    router.get('/api/get-schedule-employer-by-date', employerController.getScheduleByDate)
+    router.get('/api/room-student', roomController.getRoomStudent);
+    router.get('/api/get-all-rooms', roomController.getAllRooms);
+    router.post('/api/save-infor-rooms', roomController.postInforRoom);
+    router.get('/api/get-detail-room-by-id', roomController.getDetailRoomById);
+    router.post('/api/bulk-create-schedule', roomController.bulkCreateSchedule)
+    router.get('/api/get-schedule-room-by-date', roomController.getScheduleByDate)
+    router.get('/api/get-extra-infor-room-by-id', roomController.getExtraInforRoomById)
+    router.get('/api/get-profile-room-by-id', roomController.getProfileRoomById)
+
+    router.get('/api/get-list-student-for-room', roomController.getListStudentForRoom)
+
+
+    router.post('/api/student-book-appointment', studentController.postBookAppointment)
+    router.post('/api/verify-book-appointment', studentController.postVerifyBookAppointment)
+
+    router.post('/api/create-new-specialty', specialtyController.createSpecialty)
+    router.get('/api/get-specialty', specialtyController.getAllSpecialty)
+    router.get('/api/get-detail-specialty-by-id', specialtyController.getDetailSpecialtyById)
+
 
     // Rest of your routes...
 

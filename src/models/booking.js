@@ -10,16 +10,21 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
+            Booking.belongsTo(models.User,
+                { foreignKey: 'studentId', targetKey: 'id', as: 'studentData' }
+            )
         }
     }
 
     Booking.init(
         {
             statusID: DataTypes.STRING,
-            employerId: DataTypes.INTEGER, // Replace 'roomId' with 'employerId'
+            roomId: DataTypes.INTEGER, // Replace 'roomId' with 'roomId'
             studentId: DataTypes.INTEGER,
-            date: DataTypes.DATE,
+            date: DataTypes.STRING,
             timeType: DataTypes.STRING,
+            token: DataTypes.STRING,
+
         },
         {
             sequelize,

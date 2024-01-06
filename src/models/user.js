@@ -12,7 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       User.belongsTo(models.Allcode, { foreignKey: 'positionId', targetKey: 'keyMap', as: 'positionData' })
       User.belongsTo(models.Allcode, { foreignKey: 'gender', targetKey: 'keyMap', as: 'genderData' })
-      User.hasOne(models.Markdown, { foreignKey: 'employerId' })
+      User.hasOne(models.Markdown, { foreignKey: 'roomId' })
+      User.hasOne(models.Room_Infor, { foreignKey: 'roomId' })
+
+      User.hasMany(models.Schedule, { foreignKey: "roomId", as: 'roomData' })
+      User.hasMany(models.Booking, { foreignKey: "studentId", as: 'studentData' })
+
       // define association here
     }
   }
